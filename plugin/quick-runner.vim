@@ -2,7 +2,9 @@ func! Compile_and_run( str)
 	cclose
 	compiler gcc
 
-	make %:p:r -f plugin/makefile
+	let l:file = globpath($rtp, "plugin/makefile")
+	echo l:file
+	make %:p:r -f l:file
 
 	let errors = 0
 	for msg in getqflist()
