@@ -1,0 +1,1 @@
+CLAGS='-Wall'
