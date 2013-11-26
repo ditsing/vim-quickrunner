@@ -17,7 +17,7 @@ func! Compile_and_run( str)
 			exec a:str
 		endif
 	else
-		if g:quick_runner_auto_open_quickfix
+		if g:quickrunner_auto_open_quickfix
 			redraw
 			botright cwindow
 			.cc
@@ -27,6 +27,10 @@ endfunc
 
 if (!exists("g:quickrunner_makefile_path"))
 	let g:file = expand("<sfile>:p:h") + "/makefile"
+endif
+
+if (!exists("g:quickrunner_auto_open_quickfix"))
+	let g:quickrunner_auto_open_quickfix = 1
 endif
 
 "Compile and run with input file
