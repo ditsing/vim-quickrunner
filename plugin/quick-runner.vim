@@ -2,8 +2,7 @@ func! Compile_and_run( str)
 	cclose
 	compiler gcc
 
-	let l:file = globpath($rtp, "plugin/makefile")
-	make %:p:r -f l:file
+	exec "make %:p:r -f " + g:file
 
 	let errors = 0
 	for msg in getqflist()
@@ -25,6 +24,10 @@ func! Compile_and_run( str)
 		endif
 	endif
 endfunc
+
+if (!exists("g:quickrunner_makefile_path"))
+	let g:file = expand("<sfile>:p:h") + "/makefile"
+endif
 
 "Compile and run with input file
 map <F9> : call Compile_and_run( "!%:p:r < %:p:r.in")<CR>
