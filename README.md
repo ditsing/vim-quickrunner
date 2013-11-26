@@ -16,8 +16,12 @@ Try [pathogen](https://github.com/tpope/vim-pathogen) or [vundle](https://github
 Usage
 -----
 
-Press \<F9\> for compiling and running current buffer with input file. The input file replace the suffix ('.c' or '.cpp' and so on) of current file with a '.in'. The output are printed to the screen.
+Press `\<F9\>` for compiling and running current buffer with input file. The input file replace the suffix (`.c` or `.cpp` and so on) of current file with a `.in`. The output are printed to the screen.
 
-\<C-F6\> for compiling only.
-\<F6\> for compiling and running.
-\<F8\> for compiling and running with input and output file ( with a .out suffix).
+`\<C-F6\>` for compiling only.
+`\<F6\>` for compiling and running.
+`\<F8\>` for compiling and running with input and output file ( with a `.out` suffix).
+
+Configurations
+-------------
+See `plugin/quickrunner.vim` for details.
